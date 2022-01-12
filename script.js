@@ -1,7 +1,8 @@
-alert("REMEBER!! HEALTH HAS TO BE BETWEEN 1000 AND 2000. ATTACK HAS TO BE BETWEEN 100 AND 200. ARMOR HAS TO BE BETWEEN 50 AND 75. AND ALSO OPEN THE WEB CONSOLE");
+const submit = document.querySelector('.submit')
 
-document.querySelector(".submit").addEventListener("click", (e)=>{
+submit.addEventListener("click", (e) => {
     e.preventDefault();
+
     const health = document.getElementById("health").value
     const attack = document.getElementById("attack").value
     const armor = document.getElementById("armor").value
@@ -9,6 +10,10 @@ document.querySelector(".submit").addEventListener("click", (e)=>{
     document.querySelector("#hiddenb").setAttribute("hidden", true)
     document.querySelector("#hiddenc").setAttribute("hidden", true)
     document.querySelector("#hiddend").setAttribute("hidden", true)
+
+     // document.getElementById('#hiddena').classList('.hidden')
+     // document.getElementById('#hiddena').classList('.active')
+
     let character = new Character(health, attack, armor);
     let aux = 0
     let id = 1;
@@ -110,11 +115,7 @@ function Enemys(id, health, attack, armor) {
 }
 
 function Health(health){
-    if (health <=2000 && health >= 1000) {
-        return 0
-    } else {
-        alert("health has to be between 1000 and 2000")
-    }
+    health <= 2000 && health >= 1000 ? console.log('a') : alert('healt has to be between 1000 and 2000')
 }
 
 function Attack(attack){
@@ -132,3 +133,5 @@ function Armor(armor){
         alert("armor has to be between 50 and 75")
     }
 }
+
+alert("REMEBER!! HEALTH HAS TO BE BETWEEN 1000 AND 2000. ATTACK HAS TO BE BETWEEN 100 AND 200. ARMOR HAS TO BE BETWEEN 50 AND 75. AND ALSO OPEN THE WEB CONSOLE");
